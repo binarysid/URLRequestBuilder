@@ -1,6 +1,15 @@
-public struct URLRequestBuilder {
-    public private(set) var text = "Hello, World!"
 
-    public init() {
+import Foundation
+
+public struct URLRequestBuilder {
+    public func createRequestWith(baseURL: String,
+                              params: [String: String]? = nil,
+                              headers: [String: String]? = nil) -> URLRequest? {
+        RequestBuilder()
+            .addEndPoint(baseURL)
+            .addComponents()
+            .addParam(params)
+            .addHeader(headers)
+            .build()
     }
 }
