@@ -9,11 +9,13 @@ import Foundation
 
 extension URLRequest {
     mutating func addHeaders(headers: [String: String]?) -> Self {
+        self.allHTTPHeaderFields  = headers
         if let headers = headers {
             for (key, value) in headers {
                 self.addValue(value, forHTTPHeaderField: key)
             }
         }
+        
         return self
     }
 }
